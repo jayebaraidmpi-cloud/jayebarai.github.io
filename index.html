@@ -37,10 +37,8 @@
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
       margin: 0 auto 20px auto;
-      display: block;
+      border: 4px solid #fff;
       opacity: 0;
       transform: translateY(20px);
       transition: all 1s ease;
@@ -63,7 +61,7 @@
       transition: all 1s ease;
     }
 
-    /* Top Navigation */
+    /* Top Navigation above About */
     .top-nav {
       text-align: center;
       margin-bottom: 20px;
@@ -72,7 +70,7 @@
     .top-nav a {
       margin: 0 15px;
       font-weight: bold;
-      color: #4B0082;
+      color: #4B0082; /* deep indigo / blue-purple */
       text-decoration: underline;
       transition: color 0.3s;
     }
@@ -216,11 +214,10 @@
 
   <!-- Header -->
   <header>
-    <!-- Profile Picture from subfolder "image" -->
-    <img src="image/new-profile.jpeg" class="about-img" alt="Jaye Barai">
-    <h1>Jaye Barai</h1>
-    <p>Computer Science Student | Aspiring ICT Teacher</p>
-  </header>
+  <div class="about-img" style="background-image: url('new-picture.jpeg');"></div>
+  <h1>Jaye Barai</h1>
+  <p>Computer Science Student | Aspiring ICT Teacher</p>
+</header>
 
   <!-- Top Navigation -->
   <div class="top-nav">
