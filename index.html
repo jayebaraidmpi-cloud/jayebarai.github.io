@@ -36,10 +36,11 @@
     .about-img {
       width: 150px;
       height: 150px;
-      background-color: #000;
       border-radius: 50%;
-      margin: 0 auto 20px auto;
+      object-fit: cover;
       border: 4px solid #fff;
+      margin: 0 auto 20px auto;
+      display: block;
       opacity: 0;
       transform: translateY(20px);
       transition: all 1s ease;
@@ -215,7 +216,8 @@
 
   <!-- Header -->
   <header>
-    <div class="about-img"></div>
+    <!-- Updated Profile Picture -->
+    <img src="new-profile.jpeg" class="about-img" alt="Jaye Barai">
     <h1>Jaye Barai</h1>
     <p>Computer Science Student | Aspiring ICT Teacher</p>
   </header>
