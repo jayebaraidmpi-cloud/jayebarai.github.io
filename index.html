@@ -6,218 +6,62 @@
   <title>Jaye Barai Portfolio</title>
   <style>
     /* Global Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+    body { font-family: Arial, sans-serif; background-color: #87ceeb; color: #333; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
 
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #87ceeb; /* skyblue */
-      color: #333;
-      line-height: 1.6;
-    }
+    /* Header */
+    header { text-align: center; padding: 60px 20px; background: linear-gradient(to right, #87ceeb, #00bfff); }
+    .about-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; margin: 0 auto 20px; display: block; opacity: 0; transform: translateY(20px); transition: all 1s ease; }
+    header h1 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; opacity: 0; transform: translateY(20px); transition: all 1s ease; }
+    header p { font-size: 1.2rem; color: #f0f0f0; opacity: 0; transform: translateY(20px); transition: all 1s ease; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* Header / Hero */
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(to right, #87ceeb, #00bfff);
-      position: relative;
-    }
-
-    .about-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin: 0 auto 20px auto;
-      border: 4px solid #fff;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 1s ease;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #fff;
-      margin-bottom: 10px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 1s ease;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #f0f0f0;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 1s ease;
-    }
-
-    /* Top Navigation above About */
-    .top-nav {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .top-nav a {
-      margin: 0 15px;
-      font-weight: bold;
-      color: #4B0082; /* deep indigo / blue-purple */
-      text-decoration: underline;
-      transition: color 0.3s;
-    }
-
-    .top-nav a:hover {
-      color: #000080;
-    }
+    /* Navigation */
+    .top-nav { text-align: center; margin-bottom: 20px; }
+    .top-nav a { margin: 0 15px; font-weight: bold; color: #4B0082; text-decoration: underline; transition: color 0.3s; }
+    .top-nav a:hover { color: #000080; }
 
     /* Sections */
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 40px 30px;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 1s ease;
-    }
-
-    section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #00bfff;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      margin: 10px 0;
-    }
+    section { max-width: 900px; margin: 40px auto; background: #fff; padding: 40px 30px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+    section h2 { text-align: center; margin-bottom: 30px; color: #00bfff; }
+    ul { list-style: none; padding-left: 0; }
+    ul li { margin: 10px 0; }
 
     /* Skills */
-    .skill-bar {
-      margin: 15px 0;
-    }
-
-    .skill-bar span {
-      display: block;
-      background-color: #00bfff;
-      height: 25px;
-      width: 0;
-      border-radius: 15px;
-      color: #fff;
-      line-height: 25px;
-      padding-left: 10px;
-      transition: width 2s ease;
-    }
-
-    .skill-label {
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
+    .skill-bar { margin: 15px 0; }
+    .skill-bar span { display: block; background-color: #00bfff; height: 25px; width: 0; border-radius: 15px; color: #fff; line-height: 25px; padding-left: 10px; transition: width 2s ease; }
+    .skill-label { margin-bottom: 5px; font-weight: bold; }
 
     /* Education */
-    .edu-item {
-      margin-bottom: 20px;
-    }
-
-    .edu-item h3 {
-      color: #333;
-      margin-bottom: 5px;
-    }
+    .edu-item { margin-bottom: 20px; }
+    .edu-item h3 { color: #333; margin-bottom: 5px; }
 
     /* Goals */
-    .goal-item {
-      margin-bottom: 12px;
-      padding-left: 10px;
-      position: relative;
-    }
-
-    .goal-item::before {
-      content: "✔";
-      color: #00bfff;
-      position: absolute;
-      left: -25px;
-      top: 0;
-    }
+    .goal-item { margin-bottom: 12px; padding-left: 10px; position: relative; }
+    .goal-item::before { content: "✔"; color: #00bfff; position: absolute; left: -25px; top: 0; }
 
     /* Contact */
-    .social-links {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .social-links a {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 8px 15px;
-      border-radius: 5px;
-      border: 2px solid #00bfff;
-      transition: all 0.3s;
-      color: #00bfff;
-      font-weight: bold;
-    }
-
-    .social-links a:hover {
-      background-color: #00bfff;
-      color: #fff;
-    }
+    .social-links { text-align: center; margin-top: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; padding: 8px 15px; border-radius: 5px; border: 2px solid #00bfff; transition: all 0.3s; color: #00bfff; font-weight: bold; }
+    .social-links a:hover { background-color: #00bfff; color: #fff; }
 
     /* Hobbies */
-    .hobbies-container {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 15px;
-    }
-
-    .hobby {
-      background-color: #00bfff;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 20px;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .hobby:hover {
-      transform: translateY(-5px);
-    }
+    .hobbies-container { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-top: 15px; }
+    .hobby { background-color: #00bfff; color: #fff; padding: 10px 20px; border-radius: 20px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; opacity: 0; transform: translateY(20px); }
+    .hobby:hover { transform: translateY(-5px); }
 
     /* Responsive */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      header p { font-size: 1rem; }
-      section { margin: 20px; padding: 30px 20px; }
-      .top-nav a { display: block; margin: 5px 0; }
-    }
+    @media (max-width: 768px) { header h1 { font-size: 2rem; } header p { font-size: 1rem; } section { margin: 20px; padding: 30px 20px; } .top-nav a { display: block; margin: 5px 0; } }
   </style>
 </head>
 <body>
 
   <!-- Header -->
   <header>
-  <div class="about-img" style="background-image: url('new-profile.jpeg');"></div>
-  <h1>Jaye Barai</h1>
-  <p>Computer Science Student | Aspiring ICT Teacher</p>
-</header>
+    <img src="image/new-profile.jpeg" class="about-img" alt="Jaye Barai">
+    <h1>Jaye Barai</h1>
+    <p>Computer Science Student | Aspiring ICT Teacher</p>
+  </header>
 
   <!-- Top Navigation -->
   <div class="top-nav">
@@ -323,7 +167,6 @@
     // Scroll reveal animation
     const sections = document.querySelectorAll('section, header .about-img, header h1, header p, .hobby');
     const options = { threshold: 0.2 };
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if(entry.isIntersecting) {
@@ -332,10 +175,8 @@
         }
       });
     }, options);
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+    sections.forEach(section => observer.observe(section));
   </script>
+
 </body>
 </html>
